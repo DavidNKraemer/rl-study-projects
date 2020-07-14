@@ -33,26 +33,26 @@ for eidx, epsilon in enumerate(epsilons):
         optimals = np.zeros(num_episodes)
     
         for episode in range(num_episodes):
-            # print((
-            #     f"run {run} / {num_runs} | "
-            #     f"episode {episode} / {num_episodes} | "
-            #     f"epsilon {epsilon}"
-            # ))
+            print((
+                f"run {run} / {num_runs} | "
+                f"episode {episode} / {num_episodes} | "
+                f"epsilon {epsilon}"
+            ))
 
             # get an action from the policy
-            action = policy.act(values)
+            # TODO: fill in
             print(f"{np.argmax(means)}, {action}")
-            counts[action] += 1
-            optimals[episode] = float(action == np.argmax(means))
+            # TODO: fill in
         
             # give the action to the environment, update the environment, get the reward
-            _, rewards[episode], _, _ = env.step(action)
+            # TODO: fill in
         
             # update the average reward over time based on the new data
-            values[action] += (rewards[episode] - values[action]) / counts[action]
+            # TODO: fill in
 
         avg_rewards += rewards.cumsum() / np.arange(1, num_episodes+1)
         optimals += optimals.cumsum() / np.arange(1, num_episodes+1)
+
     avg_rewards /= num_runs
     optimals /= num_runs
     axes[0].plot(avg_rewards, label=f"$\\varepsilon = {epsilon}$")
