@@ -1,3 +1,5 @@
+from itertools import product
+
 from mdp import MarkovDecisionProcess, value_iteration
 
 

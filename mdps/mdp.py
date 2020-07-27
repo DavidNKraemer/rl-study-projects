@@ -1,7 +1,6 @@
 import numpy as np
 
 from collections import defaultdict
-from itertools import product
 
 
 def argmax(iterable, labels=None):
