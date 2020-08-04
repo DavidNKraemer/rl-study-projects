@@ -1,6 +1,7 @@
 from itertools import product
 
 from mdp import MarkovDecisionProcess, value_iteration
+from utils import get_mdp_graph, draw, set_graph_policy
 
 
 class FindOasis1D(MarkovDecisionProcess):
@@ -98,8 +99,8 @@ class FindOasis1D(MarkovDecisionProcess):
 # Main code
 
 
-num_states = 15
-oases = [0, 14]  # state indices with oases
+num_states = 5 
+oases = [0, num_states-1]  # state indices with oases
 mdp = FindOasis1D(num_states, oases)
 
 value, policy = value_iteration(mdp)
